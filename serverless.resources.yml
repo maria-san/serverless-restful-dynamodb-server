@@ -1,0 +1,19 @@
+Resources:
+  # DynamoDB Graph Table
+  GraphTable:
+    Type: "AWS::DynamoDB::Table"
+    Properties:
+      AttributeDefinitions:
+        -
+          AttributeName: "id"
+          AttributeType: "S"
+
+      KeySchema:
+        -
+          AttributeName: "id"
+          KeyType: "HASH"
+
+      ProvisionedThroughput:
+        ReadCapacityUnits: "1"
+        WriteCapacityUnits: "1"
+      TableName: ${file(./serverless.env.yml):${opt:stage}.TABLE_PREFIX}

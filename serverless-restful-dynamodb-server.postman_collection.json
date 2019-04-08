@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "7b6e63fd-3178-4a52-95fe-d0ac3e30ff10",
+		"name": "serverless-restful-dynamodb-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "post - create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"jane\"}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{HTTP_PORT}}/greet",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{HTTP_PORT}}",
+					"path": [
+						"greet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get - greet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5dd4a3eb-fb0c-49f6-a866-8089e0066bc9",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{HTTP_PORT}}/greet/{{id}}",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{HTTP_PORT}}",
+					"path": [
+						"greet",
+						"{{id}}"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get - list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{HTTP_PORT}}/greets",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{HTTP_PORT}}",
+					"path": [
+						"greets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patch - update",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"maria\"}"
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{HTTP_PORT}}/greet/{{id}}",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{HTTP_PORT}}",
+					"path": [
+						"greet",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete - delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}:{{HTTP_PORT}}/greet/{{id}}",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"port": "{{HTTP_PORT}}",
+					"path": [
+						"greet",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

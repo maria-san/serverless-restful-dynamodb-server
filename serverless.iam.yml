@@ -1,0 +1,19 @@
+iamRoleStatements:
+  # Allow DynamoDB Access
+  - Effect: Allow
+    Action:
+      - dynamodb:DescribeTable
+      - dynamoDB:Query
+      - dynamoDB:Scan
+      - dynamoDB:GetItem
+      - dynamoDB:PutItem
+      - dynamoDB:UpdateItem
+      - dynamoDB:DeleteItem
+    Resource:
+      - "*"
+  # Allow SQS Access
+  - Effect: Allow
+    Action:
+      - sqs:*
+    Resource:
+      - "*"

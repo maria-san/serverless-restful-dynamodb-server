@@ -1,0 +1,46 @@
+greet:
+  handler: src/handlers/greet/get.process
+  events:
+    - http:
+        method: get  
+        path: greet/{id}
+        request:
+          parameters:
+            paths:
+              id: true
+
+greet_all:
+  handler: src/handlers/greet/list.process
+  events:
+    - http:
+        method: get  
+        path: greets
+
+greet_create:
+  handler: src/handlers/greet/create.process
+  events:
+    - http:
+        method: post  
+        path: greet
+
+greet_update:
+  handler: src/handlers/greet/update.process
+  events:
+    - http:
+        method: patch  
+        path: greet/{id}
+        request:
+          parameters:
+            paths:
+              id: true
+
+greet_delete:
+  handler: src/handlers/greet/delete.process
+  events:
+    - http:
+        method: delete  
+        path: greet/{id}
+        request:
+          parameters:
+            paths:
+              id: true
